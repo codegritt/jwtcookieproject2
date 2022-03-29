@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
  
     authFlow.subscribe({
       next: (user: UserModel) => {
-        this._router.navigate(['/dashboard'])
+        this._router.navigate(['/users'])
         this.auth.saveUserToLocalStorage(user);
        
         // console.log(user);
