@@ -23,7 +23,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { fakeBackendProvider } from '../app/_helpers';
-import { ErrorInterceptor } from './_helpers';
+import { ErrorInterceptor } from  '../app/_helpers';
 import { AlertComponent } from './_components';
 
 @NgModule({
