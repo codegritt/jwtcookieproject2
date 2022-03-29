@@ -22,7 +22,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
-import { fakeBackendProvider } from './_helpers';
+import { fakeBackendProvider } from '../app/_helpers';
 import { ErrorInterceptor } from './_helpers';
 import { AlertComponent } from './_components';
 
