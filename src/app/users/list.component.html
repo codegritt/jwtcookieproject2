@@ -1,7 +1,8 @@
 ﻿
 
 
-<a routerLink="add" style="position: relative;left: 225px;" class="btn btn-sm btn-success mb-2">Add User</a>
+<!-- <a routerLink="add" style="position: relative;left: 225px;" class="btn btn-sm btn-success mb-2">Add User</a> -->
+<i routerLink="add" style="position: relative;left: 255px;color:#198754 ;font-size: 26px;" class="fa-solid fa-user-plus"></i>
 <table class="table table-striped" style="width: 60%;margin-left: auto;margin-right: auto;border: 2px solid navy;">
     <thead>
         <tr style="background-color: navy;color: #fff;">
@@ -17,11 +18,19 @@
             <td>{{user.email}}</td>
             <td>{{user.role}}</td>
             <td style="white-space: nowrap">
-                <a routerLink="edit/{{user.id}}" class="btn btn-sm btn-primary mr-1">Edit</a>
-                <button (click)="deleteUser(user.id)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="user.isDeleting">
+                <!-- <a routerLink="edit/{{user.id}}" class="btn btn-sm btn-primary mr-1">Edit</a> -->
+                <i routerLink="edit/{{user.id}}" style="color:#ffd43b ;font-size: 26px;"  class="fa-solid fa-pen-to-square"></i>
+                <!-- <button (click)="deleteUser(user.id)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="user.isDeleting">
                     <span *ngIf="user.isDeleting" class="spinner-border spinner-border-sm"></span>
                     <span *ngIf="!user.isDeleting">Delete</span>
-                </button>
+                </button> -->
+&nbsp;&nbsp;&nbsp;&nbsp;
+                <i  (click)="deleteUser(user.id)" style="color: #dc3545;font-size: 26px;"  class="fa-solid fa-trash-can">
+
+                    <span *ngIf="user.isDeleting" class="spinner-border spinner-border-sm"></span>
+                    <span *ngIf="!user.isDeleting"></span>
+
+                </i>
             </td>
         </tr>
         <tr *ngIf="!users">
