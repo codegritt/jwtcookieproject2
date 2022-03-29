@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
- 
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -22,16 +22,17 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
-
-
- 
+import { fakeBackendProvider } from './_helpers';
+import { ErrorInterceptor } from './_helpers';
+import { AlertComponent } from './_components';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -48,14 +49,17 @@ import { MatMenuModule } from '@angular/material/menu';
     MatIconModule,
     MatSelectModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    ReactiveFormsModule
   ],
   providers: [AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
+    
       multi: true,
-    },],
+    },
+    fakeBackendProvider,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
