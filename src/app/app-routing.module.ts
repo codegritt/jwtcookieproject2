@@ -5,7 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './shared/auth/auth-guard';
-
+const usersModule = () => import('./users/users.module').then(x => x.UsersModule);
 const routes: Routes = [
   {
     path: '',
@@ -31,6 +31,7 @@ const routes: Routes = [
       userType: 'loged-in',
     },
   },
+  { path: 'users', loadChildren: usersModule },
   
 ];
 
